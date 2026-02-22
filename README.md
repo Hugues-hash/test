@@ -1,22 +1,33 @@
-# Testing my readme writting skills
+# Detecting distribution shift in financial time series
 
-## Description
-A brief description of the project.
+## Problem
+Financial time series are non-stationary: their statistical properties change over time. Models trained on historical data may degrade when the underlying distribution shifts.
 
-## Features
-- Feature 1
-- Feature 2
-- Feature 3
+This project investigates:
+- whether distribution shift can be detected using statistical methods
+- how predictive model performance evolves under drift
+- whether drift signals correlate with performance degradation
 
-## Installation Instructions
-1. Step 1
-2. Step 2
-3. Step 3
+The focus is on monitoring and robustness, not prediction accuracy.
 
-## Usage Information
-Instructions on how to use the project.
+## Movitvation
+In deployed ML systems, especially in finance, model stability is critical. Even simple models may fail silently when input distributions change.
 
-## Contributing Guidelines
-1. Fork the repository.
-2. Create a new branch for your feature.
-3. Submit a pull request.
+This project simulates a simple monitoring system that:
+- detect feature distribution changes
+- tracks model performance over time
+- highlights periods of instability
+
+## Dataset
+- Asset: (e.g., S&P 500 ETF – SPY)
+- Frequency: Daily
+- Period: e.g., 2005–2024
+- Source: Yahoo Finance (public data)
+### Features:
+- Returns
+- Rolling mean
+- Rolling volatility
+- Lagged returns
+
+### Target: Next-day return value (regression)
+
